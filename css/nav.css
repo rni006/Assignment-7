@@ -1,13 +1,18 @@
-nav ul{
+/*color palette*/
+:root {
+    --main-bg-color: #232323;
+    --main-txt-color: #f9f9f9;
+}
+
+#menu{
     display: flex;
     flex-direction: row;
     list-style-type: none;
+    justify-content: center;
     font-family: raleway, sans-serif;
-    flex-wrap: wrap;
     position: fixed;
     top: 0;
     width: 100%;
-
 }
 
 nav li {
@@ -18,7 +23,7 @@ nav li:hover{
     cursor: pointer;
 }
 nav li a {
-    color: black;
+    color: var(--main-txt-color);
     text-decoration: none;
 }
 
@@ -26,10 +31,114 @@ nav li a {
     flex-grow: 2;
 }
 
+#logo{
+    z-index: 5;
+    position: fixed;
+    left: 30px;
+    top: 30px;
+}
 #navloginbutton{
-    padding: 5px 20px 5px 20px;
+    padding: 8px 20px 8px 20px;
     position: relative;
     top: -4px;
     background-color: transparent;
-    border: solid black 1px;
+    border: solid var(--main-txt-color) 1px;
+    font-size: 16px;
+}
+
+nav form{
+    position: fixed;
+    right: 30px;
+    top: 25px;
+}
+
+#hamburger, #cross{
+    display: none;
+}
+
+
+
+
+@media only screen and (max-width: 700px) {
+    #menu{
+        flex-direction: column;
+        top: auto;
+        bottom: 0;
+        right: 0;
+        background-color: transparent;
+        border: solid var(--main-txt-color) 1px;
+        width: 55px;
+        height: 55px;
+    }
+    nav li{
+        padding: 20px;
+        display: block;
+    }
+    nav form{
+        right: auto;
+        top: auto;
+        bottom: -0.5px;
+        left: -0.5px;
+    }
+
+    .remove{
+        display: none;
+    }
+    #navloginbutton{
+        padding: 18px 10px 18px 10px;
+        top: 0;
+        font-size: 16px;
+    }
+    #logo{
+        left: 46%;
+        top: 30px;
+    }
+
+    #hamburger, #cross{
+        display: block;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        height: 35px;
+        z-index: 5;
+    }
+
+    .show{
+        animation-name: slidein;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+        width: 150px;
+        height: 250px;
+    }
+
+    .hide{
+        animation-name: slideout;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+        width: 10px;
+        height:10px;
+    }
+
+    @keyframes slidein {
+        from {
+            width: 55px;
+            height:55px;
+        }
+        to {
+            width: 150px;
+            height: 250px;
+
+        }
+    }
+    @keyframes slideout {
+        from {
+            width: 150px;
+            height: 250px;
+        }
+        to {
+            width: 55px;
+            height:55px;
+        }
+    }
+
 }

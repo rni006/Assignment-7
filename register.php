@@ -4,24 +4,12 @@
     define("ACCESSKEY", "jf)93/KD84¤5&njd199");
     include "inc/meta.php" ?>
     <link rel="stylesheet" href="css/accessforms.css">
-    <title>Iter Agency</title>
+    <title>Iter Agency - Register</title>
 </head>
-<body>
-<header>
-    <nav>
-        <ul>
-            <li><a href="index.php#intro">[Logo]</a> </li>
-            <li><a href="index.php#about">About</a></li>
-            <li><a href="index.php#experience">Experience</a></li>
-            <li><a href="index.php#events">Events</a></li>
-            <li><a href="index.php#stay">Stay</a></li>
-            <li id="buffer"></li>
-        </ul>
-    </nav>
-</header>
+<body onresize="init()" onload="init()">
+<?php include "inc/nav.php"?>
 <section id="register">
     <form action="">
-
         <legend>Register</legend>
 
         <label for="fname">First name <span>&#8226;</span></label>

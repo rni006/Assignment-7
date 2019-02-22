@@ -1,3 +1,13 @@
+/*color palette*/
+:root {
+    --main-bg-color: #232323;
+    --main-txt-color: #f9f9f9;
+}
+
+#loginform{
+    display: none;
+}
+
 #login, #register {
     display: flex;
     align-items: center;
@@ -14,12 +24,16 @@ legend{
     font-size: 20px;
     padding: 20px;
 }
+
+legend, label, select, option{
+    color: var( --main-bg-color);
+}
 form {
     margin-top: 8px;
     margin-bottom: 8px;
     width: 100%;
     max-width: 600px;
-    background-color: white;
+    background-color: var(--main-txt-color);
     padding: 20px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
@@ -36,9 +50,11 @@ input, textarea {
     border: 1px solid #afafaf;
     box-sizing: border-box;
 }
+input {
+    background-color: #f3f3f3;
+}
 
-
-textarea {
+textarea{
     height: 20vh;
 }
 
@@ -53,7 +69,6 @@ textarea {
     padding: 14px 20px;
     margin: 8px 0;
     cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 #submit:hover, #registerbutton:hover, #loginbutton:hover {

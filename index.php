@@ -5,24 +5,8 @@
     include "inc/meta.php" ?>
     <title>Iter Agency</title>
 </head>
-<body>
-<header>
-    <nav>
-        <ul>
-            <li><a href="#intro">[Logo]</a> </li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#stay">Stay</a></li>
-            <li id="buffer"></li>
-            <li>
-                <form action="login.php" >
-                    <input type="submit" id="navloginbutton" value="Login"/>
-                </form>
-            </li>
-        </ul>
-    </nav>
-</header>
+<body onresize="init()" onload="init()">
+<?php include "inc/nav.php"?>
 <section id="intro"></section>
 <section id="about"></section>
 <section id="experience"></section>

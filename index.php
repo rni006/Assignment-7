@@ -5,9 +5,18 @@
     include "inc/meta.php" ?>
     <title>Iter Agency</title>
 </head>
-<body onresize="init()" onload="init()">
+<body onload="init()">
 <?php include "inc/nav.php"?>
-<section id="intro"></section>
+<section id="intro">
+    <img alt="logo" src="images/graphics/logo.png">
+    <h1>THE COSMOS AWAITS YOU</h1>
+    <form action="#about">
+        <input type="submit" value="Start your journey"/>
+    </form>
+    <hr>
+</section>
+
+
 <section id="about"></section>
 <section id="experience"></section>
 <section id="events"></section>

@@ -2,6 +2,8 @@
 :root {
     --main-bg-color: #232323;
     --main-txt-color: #f9f9f9;
+    --main-accent-color: #EE750E;
+
 }
 
 #menu{
@@ -19,12 +21,14 @@ nav li {
     padding: 30px;
 }
 
-nav li:hover{
-    cursor: pointer;
-}
 nav li a {
     color: var(--main-txt-color);
     text-decoration: none;
+}
+
+nav li a:hover {
+    color: var(--main-accent-color);
+    cursor: pointer;
 }
 
 #buffer{
@@ -37,6 +41,7 @@ nav li a {
     left: 30px;
     top: 30px;
 }
+
 #navloginbutton{
     padding: 8px 20px 8px 20px;
     position: relative;
@@ -46,6 +51,12 @@ nav li a {
     font-size: 16px;
 }
 
+#navloginbutton:hover{
+    color: var(--main-accent-color);
+    border-color: var(--main-accent-color);
+    cursor: pointer;
+}
+
 nav form{
     position: fixed;
     right: 30px;
@@ -53,6 +64,8 @@ nav form{
 }
 
 #hamburger, #cross{
+    width: 0;
+    height: 0;
     display: none;
 }
 
@@ -69,7 +82,12 @@ nav form{
         border: solid var(--main-txt-color) 1px;
         width: 55px;
         height: 55px;
+        z-index: 5;
     }
+    #menu:hover {
+        border: solid var(--main-accent-color) 1px;
+    }
+
     nav li{
         padding: 20px;
         display: block;
@@ -89,6 +107,10 @@ nav form{
         top: 0;
         font-size: 16px;
     }
+
+    #navloginbutton:hover{
+        color: var(--main-txt-color);
+    }
     #logo{
         left: 46%;
         top: 30px;
@@ -99,8 +121,13 @@ nav form{
         position: fixed;
         bottom: 10px;
         right: 10px;
-        height: 35px;
-        z-index: 5;
+        width: 35px;
+        height: auto;
+        z-index: 1;
+    }
+
+    #cross{
+        z-index: 6;
     }
 
     .show{

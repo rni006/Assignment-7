@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="css/accessforms.css">
     <title>Iter Agency - Login</title>
 </head>
-<body onresize="init()" onload="init()">
+<body onload="init()">
 <?php include "inc/nav.php"?>
 <section id="login">
     <form action="">
-        <legend>Login</legend>
+        <legend>Sign in</legend>
 
         <label for="username">Username</label>
         <input type="text" id="username" required>
@@ -22,7 +22,7 @@
     </form>
 
     <form action="register.php">
-        <legend>Register</legend>
+        <legend>Sign up</legend>
         <input type="submit" id="submit" value="Register">
     </form>
 </section>

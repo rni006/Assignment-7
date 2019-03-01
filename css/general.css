@@ -2,8 +2,11 @@
 :root {
     --main-bg-color: #232323;
     --main-txt-color: #f9f9f9;
+    --main-accent-color: #EE750E;
+
 }
 
+/*general*/
 html{
     scroll-behavior: smooth;
     background-color: var(--main-bg-color);
@@ -23,7 +26,54 @@ html{
 section{
     min-height: 100vh;
 }
+/*intro section*/
+#intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
+}
+
+#intro form input {
+    padding: 15px 30px 15px 30px;
+    position: relative;
+    top: -4px;
+    background-color: transparent;
+    border: solid var(--main-txt-color) 1px;
+    font-size: 16px;
+    margin: 40px;
+}
+#intro form input:hover{
+    color: var(--main-accent-color);
+    border-color: var(--main-accent-color);
+    cursor: pointer;
+}
+#intro img {
+    height: auto;
+    width: 100px;
+    margin: 40px;
+}
+
+#intro h1 {
+    font-family: raleway, sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#intro hr {
+    height: 240px;
+    width: 1px;
+    background-color: var(--main-txt-color);
+    border-style: none;
+    position: absolute;
+    bottom: 0;
+
+}
+
+/*footer*/
 footer {
     width: 100%;
     text-align: center;

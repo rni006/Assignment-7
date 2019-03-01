@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/accessforms.css">
     <title>Iter Agency - Register</title>
 </head>
-<body onresize="init()" onload="init()">
+<body onload="init()">
 <?php include "inc/nav.php"?>
 <section id="register">
     <form action="">
@@ -30,13 +30,13 @@
         <label for="password">Password <span>&#8226;</span></label>
         <input type="password" pattern=".{6,}" title="Six or more characters" id="password" required>
 
-        <label for="departurepoint">Preferred departure point </label>
+        <label for="departurepoint">Preferred departure point <span>&#8226;</span> </label>
         <select id="departurepoint" name="cars">
             <option value="moscow">Russia - Moscow</option>
             <option value="beijing">China - Beijing</option>
             <option value="washington">USA - Washington DC</option>
             <option value="dubai">UAE - Dubai</option>
-        </select><span> &#8226;</span>
+        </select>
 
         <input type="submit" id="registerbutton" value="Register">
 

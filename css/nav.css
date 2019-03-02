@@ -69,6 +69,14 @@ nav form{
     display: none;
 }
 
+#fade {
+    position:fixed;
+    top:0;
+    width: 100vw;
+    height: 100px;
+    background-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0, 0, 0, 0.6));
+    pointer-events: none;
+}
 
 
 
@@ -78,7 +86,7 @@ nav form{
         top: auto;
         bottom: 0;
         right: 0;
-        background-color: transparent;
+        background-color: rgba(0, 0, 0, 0.38);
         border: solid var(--main-txt-color) 1px;
         width: 55px;
         height: 55px;
@@ -91,6 +99,9 @@ nav form{
     nav li{
         padding: 20px;
         display: block;
+    }
+    nav li a {
+
     }
     nav form{
         right: auto;
@@ -106,6 +117,7 @@ nav form{
         padding: 18px 10px 18px 10px;
         top: 0;
         font-size: 16px;
+        background-color: rgba(0, 0, 0, 0.38);;
     }
 
     #navloginbutton:hover{
@@ -116,6 +128,7 @@ nav form{
         top: 30px;
     }
 
+
     #hamburger, #cross{
         display: block;
         position: fixed;
@@ -123,11 +136,11 @@ nav form{
         right: 10px;
         width: 35px;
         height: auto;
-        z-index: 1;
+        z-index: 6;
     }
 
-    #cross{
-        z-index: 6;
+    #hamburger{
+        pointer-events: none;
     }
 
     .show{
@@ -145,6 +158,8 @@ nav form{
         width: 10px;
         height:10px;
     }
+
+
 
     @keyframes slidein {
         from {

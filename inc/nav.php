@@ -4,6 +4,7 @@ if (ACCESSKEY == "jf)93/KD84¤5&njd199"){
     <header>
         <nav>
             <a id="logo" href="index.php#intro">[Logo]</a>
+            <div id="fade"></div>
             <ul id="menu">
                 <li><a href="index.php#about">About</a></li>
                 <li><a href="index.php#experience">Experience</a></li>

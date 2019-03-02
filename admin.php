@@ -81,6 +81,7 @@ include "inc/nav.php";
             <th>Date</th>
             <th>Location</th>
             <th>Description</th>
+            <th></th>
         </tr>
         <?php
         # deletes a selected item from the database

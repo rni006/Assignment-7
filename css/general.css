@@ -1,7 +1,7 @@
 /*color palette*/
 :root {
     --main-bg-color: #232323;
-    --main-txt-color: #f9f9f9;
+    --main-txt-color: #fdfdfd;
     --main-accent-color: #EE750E;
 
 }
@@ -21,11 +21,21 @@ html{
     -o-font-smoothing: antialiased;
     font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    font-family: 'Roboto', sans-serif;
 }
 
 section{
     min-height: 100vh;
 }
+
+h1 {
+    font-family: raleway, sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
 /*intro section*/
 #intro{
     display: flex;
@@ -53,14 +63,6 @@ section{
     height: auto;
     width: 100px;
     margin: 40px;
-}
-
-#intro h1 {
-    font-family: raleway, sans-serif;
-    font-weight: 100;
-    font-size: 30px;
-    letter-spacing: 2px;
-    text-align: center;
 }
 
 #intro hr {

@@ -17,18 +17,33 @@ if (!isset($_SESSION['login'])){
     define("ACCESSKEY", "jf)93/KD84¤5&njd199");
     include "inc/meta.php";
     include "inc/connection.php";
-    include 'ChromePhp.php';
+    include 'ChromePhp.php'; # hjelpeklasse som tillater PHP å printe på chrome console
     ?>
     <link rel="stylesheet" href="css/accessforms.css">
     <link rel="stylesheet" href="css/admin.css">
     <title>Iter Agency - Admin</title>
 </head>
 <body onload="init()">
-<?php
-# remember to change nav.php so that the login button changes to logout if a user is logged in.
-include "inc/nav.php";
-?>
-<section id="events_handler">
+
+<!-- remember to change nav.php so that the login button changes to logout if a user is logged in. -->
+<header>
+    <nav>
+        <a id="logo" href="index.php#intro">[Logo]</a>
+        <div id="fade"></div>
+        <ul id="menu">
+            <li><a href="#event_input">New Event</a></li>
+            <li><a href="#events_table">Published Events</a></li>
+            <li><a href="#booked_trips">Booked Trips</a></li>
+            <li style="display: none"><a href="#"></a></li>
+        </ul>
+        <form id="loginform" action="login.php">
+            <input type="submit" id="navloginbutton" value="Login"/>
+        </form>
+        <img src="images/graphics/burgerbutton.svg" id="hamburger" alt="menu">
+        <img src="images/graphics/crossbutton.svg" id="cross" alt="exit">
+    </nav>
+</header>
+<section id="event_input">
     <?php
     # inserts input data into database
     if (isset($_POST['submit']) && $_POST['submit'] == "Add event"){
@@ -73,7 +88,7 @@ include "inc/nav.php";
     </form>
     </div>
 </section>
-<section>
+<section id="events_table">
     <h1>Events</h1>
     <table>
         <tr>
@@ -132,6 +147,9 @@ include "inc/nav.php";
         $conn->close();
         ?>
     </table>
+</section>
+<section id="booked_trips">
+
 </section>
 <?php include "inc/footer.php"?>
 

@@ -13,7 +13,10 @@
     <form action="#about">
         <input type="submit" value="Start your journey"/>
     </form>
-    <hr>
+    <div id="line">
+        <hr>
+    </div>
+
 </section>
 
 

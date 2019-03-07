@@ -3,7 +3,7 @@
     <?php
     define("ACCESSKEY", "jf)93/KD84¤5&njd199");
     include "inc/meta.php" ?>
-    <title>Iter Agency</title>
+    <title>Итер</title>
 </head>
 <body onload="init()">
 <?php include "inc/nav.php"?>

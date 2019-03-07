@@ -21,7 +21,7 @@ if (!isset($_SESSION['login'])){
     ?>
     <link rel="stylesheet" href="css/accessforms.css">
     <link rel="stylesheet" href="css/admin.css">
-    <title>Iter Agency - Admin</title>
+    <title>Итер - Admin</title>
 </head>
 <body onload="init()">
 

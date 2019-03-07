@@ -4,7 +4,7 @@
     define("ACCESSKEY", "jf)93/KD84¤5&njd199");
     include "inc/meta.php" ?>
     <link rel="stylesheet" href="css/accessforms.css">
-    <title>Iter Agency - Login</title>
+    <title>Итер - Login</title>
 </head>
 <body onload="init()">
 <?php include "inc/nav.php"?>
@@ -12,7 +12,7 @@
     <form action="">
         <legend>Sign in</legend>
 
-        <label for="username">Username</label>
+        <label for="username">Serial Number</label>
         <input type="text" id="username" required>
 
         <label for="password">Password</label>

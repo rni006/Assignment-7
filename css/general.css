@@ -26,6 +26,7 @@ html{
 
 section{
     min-height: 100vh;
+
 }
 
 h1 {
@@ -69,18 +70,52 @@ h1 {
 #intro div {
     display: flex;
     margin-top: -30px;
-    width: 100vw;
     height: 100%;
     justify-content: center;
 }
 
 #intro hr {
     width: 1px;
-    height: 100%;
+    height: 200%;
     background-color: var(--main-txt-color);
     border-style: none;
+}
 
 
+/*about section*/
+#about {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+
+#about div {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 680px;
+}
+
+#about h2{
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    text-align: center;
+    align-self: center;
+    text-transform: uppercase;
+    max-width: 480px;
+    margin-top: 30px;
+    padding: 20px;
+
+}
+
+#about p {
+    font-size: 18px;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 300;
+    padding: 10px;
 
 
 }

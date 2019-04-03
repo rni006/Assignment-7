@@ -16,6 +16,7 @@ if (ACCESSKEY == "jf)93/KD84¤5&njd199"){
     //database input security check tool
     function check($data) {
         $data = trim($data);
+        $data = strip_tags($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;

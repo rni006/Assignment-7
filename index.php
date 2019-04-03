@@ -19,8 +19,16 @@
 
 </section>
 
-
-<section id="about"></section>
+<section id="about">
+    <div>
+        <h2>Venture beyond your reality</h2>
+        <p>The luxurious transcendent vacation that goes beyond the Earthy limitations.</p>
+        <p>
+            ИТЕР is the leading interplanetary expedition service on planet Earth. We offers a unique journey to our new
+            World. With over 200 years of experience on Mars, we are finally able to offer resident visitations.
+        </p>
+    </div>
+</section>
 <section id="experience"></section>
 <section id="events"></section>
 <section id="stay"></section>

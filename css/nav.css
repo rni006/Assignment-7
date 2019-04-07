@@ -35,11 +35,15 @@ nav li a:hover {
     flex-grow: 2;
 }
 
-#logo{
+#logo {
     z-index: 5;
     position: fixed;
     left: 30px;
     top: 30px;
+}
+
+#small-logo{
+    width:80px;
 }
 
 #navloginbutton{
@@ -123,10 +127,11 @@ nav form{
     #navloginbutton:hover{
         color: var(--main-txt-color);
     }
-    #logo{
+    
+    /* #logo{
         left: 46%;
         top: 30px;
-    }
+    } */
 
 
     #hamburger, #cross{

@@ -3,7 +3,7 @@ if (ACCESSKEY == "jf)93/KD84¤5&njd199"){
     echo '
     <header>
         <nav>
-            <a id="logo" href="index.php#intro">[Logo]</a>
+            <a id="logo" href="index.php#intro"><img id="small-logo" src="images/graphics/small-logo-alt.png"></a>
             <div id="fade"></div>
             <ul id="menu">
                 <li><a href="index.php#about">About</a></li>

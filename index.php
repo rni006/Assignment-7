@@ -35,7 +35,42 @@
         </div>
     </section>
     <section id="experience"></section>
-    <section id="events"></section>
+    <section id="events">
+        <div id="content">
+            <h2>Events</h2>
+            <ul class="timeline-list">
+                <?php
+                include "inc/connection.php";
+
+                $sql = "SELECT * FROM iter_events";
+                $result = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($result) > 0) {
+                    $events=[];
+                    // output data of each row
+                    while( $row = $result->fetch_assoc()) {
+                        array_unshift($events,[$row["date"],$row["title"], $row["description"], $row["location"]]);
+                    }
+                    foreach ($events as $elem){
+                        echo'
+                        <li class="event" data-date="'. $elem[0] .'">
+                            <h3>'. $elem[1] .'</h3>
+                            <p>
+                                '. $elem[2] .'
+                            </p>
+                            <p>Location: '. $elem[3] .'</p>
+                        </li>
+                        ';
+                    }
+                } else {
+                    echo '<h1>Ingen arrangementer tilgjengelig</h1>';
+                }
+                $conn->close();
+
+                ?>
+            </ul>
+        </div>
+    </section>
     <section id="stay"></section>
     <?php include "inc/footer.php"?>
 

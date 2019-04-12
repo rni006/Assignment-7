@@ -43,7 +43,7 @@
                 include "inc/connection.php";
 
                 $sql = "SELECT * FROM iter_events";
-                $result = mysqli_query($conn, $sql);
+                $result = $conn->query($sql);
 
                 if (mysqli_num_rows($result) > 0) {
                     $events=[];

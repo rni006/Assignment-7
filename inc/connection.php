@@ -2,9 +2,9 @@
 if (ACCESSKEY == "jf)93/KD84¤5&njd199"){
 
     $host = "localhost";
-    $username = "gwe19";
-    $password = "COfK";
-    $database = "dk205_gwe19";
+    $username = "dk205GR3_19";
+    $password = "CrguGuutG1i1bmxX";
+    $database = "dk205GR3_19";
 
     $conn = new mysqli($host, $username, $password, $database);
 

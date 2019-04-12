@@ -3,13 +3,13 @@ username: admin
 password: password123
 -->
 <?php
-/*
+
 session_start();
 # checks to see if the user is logged in as an admin. if not, user is sent to the login page
 if (!isset($_SESSION['login'])){
     header('LOCATION:login.php');
     die();
-}*/
+}
 ?>
 <html lang="en">
 <head>

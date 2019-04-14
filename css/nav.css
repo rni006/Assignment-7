@@ -17,6 +17,10 @@
     width: 100%;
 }
 
+nav{
+    z-index: 1;
+}
+
 nav li {
     padding: 30px;
 }

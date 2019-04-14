@@ -73,63 +73,84 @@
     </section>
 
     <section id="stay">
+    <div class="stay-container">
+        <div class="message">
+            <h1>Best trip you will ever have</h1>
+            <p>Please look forward to it</p>
+        </div>  
 
-<div class="side-calendar">
-    <div class="month">      
-  <ul>
-    <!-- <li class="prev">&#10094;</li>
-    <li class="next">&#10095;</li> -->
-    <li>
-      Mars<br>
-      <span style="font-size:18px">3019</span>
-    </li>
-  </ul>
-</div>
+        <div class="booking">
+            <div class="booking-container">
+                <h1>BOOK YOUR STAY HERE</h1>
+                <div class="bookyourstay">
+                    <form>
+                        <div class="booking-dates">
+                            <h1 class="booking-title">Journey dates</h1>
+                            <div>
+                                <label class="bookyourstay-label" for="departure">Departure</label>
+                                <select class="bookyourstay-input bookyourstay-input-select" name="departure">
+                                    <option>01.03.3019</option>
+                                    <option>08.03.3019</option>
+                                    <option>15.03.3019</option>
+                                    <option>22.03.3019</option> 
+                                    <option>29.03.3019</option>
+                                </select>      
+                            </div>
 
-<ul class="weekdays">
-  <li>Mo</li>
-  <li>Tu</li>
-  <li>We</li>
-  <li>Th</li>
-  <li>Fr</li>
-  <li>Sa</li>
-  <li>Su</li>
-</ul>
+                            <div>
+                                <label class="bookyourstay-label" for="return">Return</label>
+                                <select class="bookyourstay-input bookyourstay-input-select" name="return">
+                                <option>01.03.3019</option>
+                                <option>08.03.3019</option>
+                                <option>15.03.3019</option>
+                                <option>22.03.3019</option> 
+                                <option>29.03.3019</option>
+                                </select>   
+                            </div>
 
-<ul class="days">  
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-  <li>4</li>
-  <li>5</li>
-  <li>6</li>
-  <li>7</li>
-  <li>8</li>
-  <li>9</li>
-  <li><span class="active">10</span></li>
-  <li>11</li>
-  <li>12</li>
-  <li>13</li>
-  <li>14</li>
-  <li>15</li>
-  <li>16</li>
-  <li>17</li>
-  <li>18</li>
-  <li>19</li>
-  <li>20</li>
-  <li>21</li>
-  <li>22</li>
-  <li>23</li>
-  <li>24</li>
-  <li>25</li>
-  <li>26</li>
-  <li>27</li>
-  <li>28</li>
-  <li>29</li>
-  <li>30</li>
-  <li>31</li>
-</ul>
-</div>
+                        </div>
+                        <!-- Second box -->
+
+                        <div class="booking-info">
+                            <h1 class="booking-title">Guests and rooms</h1>
+                            <div>
+                                <label class="bookyourstay-label" for="rooms">Rooms</label>
+                                <select class="bookyourstay-input bookyourstay-input-select" name="rooms">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>  
+                                </select>   
+                            </div>
+                            <div class="twocolumn">
+                                <div>
+                                    <label class="bookyourstay-label" for="adults">Adults</label>
+                                    <select class="bookyourstay-input bookyourstay-input-select bookyourstay-input-small" name="adults">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    </select>     
+                                </div>
+                                <div>
+                                <label class="bookyourstay-label" for="kids">Children (under 12)</label>
+                                    <select class="bookyourstay-input bookyourstay-input-select bookyourstay-input-small" name="kids">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    </select>    
+                                </div>
+                            </div>
+                        </div>
+                        <input id="btn" type="submit" value="Submit"/>
+                    </form> 
+                </div> 
+            </div>
+        </div>
+    </div>
     </section>
 
     <?php include "inc/footer.php"?>

@@ -28,9 +28,9 @@ body::-webkit-scrollbar-track {
 
 /* scrollbar itself */
 body::-webkit-scrollbar-thumb {
-    background-color: black;
+    background-color:var(--main-accent-color);
     border-radius:10px;
-    border:4px solid black;
+    border:4px solid var(--main-accent-color);
 }
 
 /* set button(top and bottom of the scrollbar) */
@@ -232,100 +232,156 @@ h1 {
     top: 5px;
 }
 
-/* Calendar system */
+/* STAY */
 
-ul{
-    list-style-type: none;
-}
-
-.side-calendar {
-	max-width: 33%;
-	margin-left: 5rem;
-}
-
-.month {
-    padding: 70px 25px;
-    max-width: 100%;
-    background: var(--main-accent-color);
-    text-align: center;
-  }
-  
-  .month ul {
+div{
     margin: 0;
     padding: 0;
-  }
-  
-  .month ul li {
-    color: white;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-  }
-  
-  .month .prev {
-    float: left;
-    padding-top: 10px;
-  }
-  
-  .month .next {
-    float: right;
-    padding-top: 10px;
-  }
-  
-  .weekdays {
-    max-width: 100%;
-    margin: 0;
-    padding: 10px 0;
-    background-color: #ddd;
-  }
-  
-  .weekdays li {
-    display: inline-block;
-    width: 12.5%;
-    color: #666;
+}
+
+.stay-container {
+    display: grid;
+    grid-template-areas:
+    "booking message";
+    grid-template-columns: 1fr 1fr;
+
+	margin-left: auto;
+	margin-right: auto;
+	/* display: flex; */
+	/* flex-direction: row-reverse; */
+	justify-items: center;
+	min-height: 542px;
+	position: relative;
+}
+
+.booking-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	z-index: 1;
+	position: relative;
+	top: 25px;
+}
+
+.message {
+    grid-area: message;
+	text-align: left;
+	padding-top: 15px;
+	width: 479px;
+	line-height: 1.8;
+}
+
+.message h1{
+    text-align: left;
+}
+
+
+.booking {
+    grid-area: booking;
+	background: 0 0;
+	min-width: 300px;
+	max-width: auto;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.bookyourstay {
+	padding-top: 35px;
+	margin: 0 auto 20px;
+	text-align: left;
+    width: auto;
+    background: 0 0;
+    display: flex;
+    justify-content: center;
+    background: 0 0;
+	/* min-width: 659px;
+	max-width: 671px; */
+}
+
+.booking-title {
+	position: relative;
+	top: -9px;
+	color: var(--main-accent-color);
+	font-size: 18px;
+	text-align: center;
+}
+
+.booking-dates, .booking-info {
+	min-height: 200px;
+	justify-content: center;
+	align-items: center;
     text-align: center;
-  }
-  
-  .days {
-    max-width: 100%;
-    padding: 10px 0;
-    background: #eee;
-    margin: 0;
-  }
-  
-  .days li {
-    list-style-type: none;
-    display: inline-block;
-    width: 12.5%;
+    margin-right: 10px;
+    padding: 0 15px;
+    text-align: left;
+}
+
+.bookyourstay-label{
+    font-size: 10px;
+    margin-bottom:9px;
+    letter-spacing: 1px;
     text-align: center;
-    margin-bottom: 5px;
-    font-size:12px;
-    color: #777;
-  }
-  
-  .days li .active {
-    padding: 2px;
-    background: var(--main-accent-color);
-    color: white !important
-  }
-  
+}
 
-/* Add media queries for smaller screens */
+.bookyourstay-input.bookyourstay-input-select.bookyourstay-input-small {
+	margin-right: 10px;
+}
 
-@media screen and (max-width:900px) {
-    .side-calendar{
-        max-width: 50%;
-        margin:1em;
-    }
-  }
+.bookyourstay-input-select {
+    background: url(images/drop-down.png) 95% center no-repeat;
+    background-size: 16px;
+}
 
-@media screen and (max-width:620px) {
-    .side-calendar{
-        max-width: 100%;
-        margin:0;
-    }
-  }
+.bookyourstay-input {
+	border: solid 1px #979797;
+	padding: 7px 6px;
+	width: 210px;
+	min-height: 32px;
+	box-sizing: border-box;
+	background: 0 0;
+	border-radius: 0;
+	font-family: museo-slab;
+	font-weight: 300;
+	display: block;
+	margin-bottom: 23px;
+}
 
+
+.bookyourstay-input-small {
+	width: 100px;
+}
+
+
+.twocolumn {
+	display: flex;
+	flex-direction: row;
+}
+
+select{
+    text-transform: none;
+}
+
+select option{
+    background: var(--main-bg-color);
+    color:var(--main-txt-color);
+    text-shadow:0 1px 0 var(--main-bg-color);
+}
+
+#btn{
+    padding: 15px 30px 15px 30px;
+    position: relative;
+    top: -4px;
+    background-color: transparent;
+    border: solid var(--main-txt-color) 1px;
+    font-size: 16px;
+    margin-left: 3.6em;
+}
+
+#btn:hover{
+    color: var(--main-accent-color);
+    border-color: var(--main-accent-color);
+    cursor: pointer;
+}
 
 
 /*footer*/
@@ -334,5 +390,21 @@ footer {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px ;
+}
+
+/* Media screen sizes */
+
+@media only screen and (max-width: 1168px) {
+.stay-container{
+    display: grid;
+    grid-template-areas:
+    "booking"
+    "message";
+    grid-template-columns: 1fr;
+}
+}
+
+@media only screen and (max-width: 684px){
+    
 }
 

@@ -47,16 +47,25 @@ nav li a:hover {
     width:80px;
 }
 
-#navloginbutton{
-    padding: 8px 20px 8px 20px;
+#navloginbutton, #navloginImage{
     position: relative;
     top: -4px;
     background-color: transparent;
     border: solid var(--main-txt-color) 1px;
-    font-size: 16px;
 }
 
-#navloginbutton:hover{
+#navloginbutton{
+    padding: 8px 20px 8px 20px;
+    font-size: 16px;
+}
+#navloginImage {
+    height: 50px;
+    width: 50px;
+    padding: 3px;
+    top: -10px;
+}
+
+#navloginbutton:hover #navloginImage:hover{
     color: var(--main-accent-color);
     border-color: var(--main-accent-color);
     cursor: pointer;
@@ -125,6 +134,12 @@ nav form{
         top: 0;
         font-size: 16px;
         background-color: rgba(0, 0, 0, 0.38);;
+    }
+    #navloginImage {
+        height: 58px;
+        width: 58px;
+        padding: 7px;
+        top: auto;
     }
 
     #navloginbutton:hover{

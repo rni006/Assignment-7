@@ -9,6 +9,12 @@ session_start();
 if (!isset($_SESSION['login'])){
     header('LOCATION:login.php');
     die();
+}else if ($_SESSION["login"] !="admin"){
+    #this does not work for some reason:
+    # http_response_code(404);
+
+    #temporary workaround:
+    header('LOCATION:error.php');
 }
 ?>
 <html lang="en">
@@ -19,8 +25,11 @@ if (!isset($_SESSION['login'])){
     include "inc/connection.php";
     include 'ChromePhp.php'; # hjelpeklasse som tillater PHP å printe på chrome console
     ?>
+
     <link rel="stylesheet" href="css/accessforms.css">
     <link rel="stylesheet" href="css/admin.css">
+
+
     <title>Итер - Admin</title>
 </head>
 <body onload="init()">
@@ -28,7 +37,7 @@ if (!isset($_SESSION['login'])){
 <!-- remember to change nav.php so that the login button changes to logout if a user is logged in. -->
 <header>
     <nav>
-        <a id="logo" href="index.php#intro">[Logo]</a>
+        <a id="logo" href="index.php">[Logo]</a>
         <div id="fade"></div>
         <ul id="menu">
             <li><a href="#event_input">New Event</a></li>
@@ -36,8 +45,8 @@ if (!isset($_SESSION['login'])){
             <li><a href="#booked_trips">Booked Trips</a></li>
             <li style="display: none"><a href="#"></a></li>
         </ul>
-        <form id="loginform" action="login.php">
-            <input type="submit" id="navloginbutton" value="Login"/>
+        <form id = 'loginform' action='logout.php'>
+            <input type='submit' id='navloginbutton' value='Logout'/>
         </form>
         <img src="images/graphics/burgerbutton.svg" id="hamburger" alt="menu">
         <img src="images/graphics/crossbutton.svg" id="cross" alt="exit">
@@ -71,7 +80,7 @@ if (!isset($_SESSION['login'])){
     }
     ?>
     <h1>Add event</h1>
-    <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" enctype="multipart/form-data">
+    <form id="eventForm" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" enctype="multipart/form-data">
         <label for="title">Title</label>
         <input type="text" id="title" name="title" required>
 

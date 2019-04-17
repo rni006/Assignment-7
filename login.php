@@ -1,13 +1,16 @@
 <?php
 session_start();
-if(isset($_SESSION['admin'])) {
-    header('LOCATION:admin.php');
-    die();
+
+if(isset($_SESSION['login'])) {
+    if ($_SESSION['login'] == "admin"){
+        header('LOCATION:admin.php');
+        die();
+    } elseif ($_SESSION['login'] == "user"){
+        header('LOCATION:index.php');
+        die();
+    }
 }
-if(isset($_SESSION['user'])) {
-    header('LOCATION:index.php');
-    die();
-}
+
 ?>
 <html lang="en">
 <head>
@@ -15,6 +18,11 @@ if(isset($_SESSION['user'])) {
     define("ACCESSKEY", "jf)93/KD84¤5&njd199");
     include "inc/meta.php" ?>
     <link rel="stylesheet" href="css/accessforms.css">
+    <style>
+        #loginform{
+            display: none;
+        }
+    </style>
     <title>Итер - Login</title>
 </head>
 <body onload="init()">
@@ -23,7 +31,6 @@ if(isset($_SESSION['user'])) {
     <?php
     include "inc/connection.php";
     if(isset($_POST['Login'])){
-        echo "<h1>you tried to log in</h1>";
         $serial = check($_POST['serial_code']);
         $password = check($_POST['password']);
 
@@ -31,53 +38,29 @@ if(isset($_SESSION['user'])) {
         $result = mysqli_query($conn, $sql);
 
         //checks username
-        if (mysqli_num_rows($result) > 0){
+        if ($result){
             $row = $result->fetch_assoc();
-            echo "<h1>your username was found: " . $row["serial_code"] . "</h1>";
-
             //checks password
             if (password_verify($password, $row["password"])){
-                echo "<h1>password is valid</h1>";
+
+                if ($row["type"] == "admin"){
+                    $_SESSION['login'] = "admin";
+                    header('LOCATION:admin.php');
+
+                }else{
+                    $_SESSION['login'] = "user";
+                    header('LOCATION:index.php');
+                }
             }else {
-                echo "<h1>password is invalid. you entered: ". password_hash($password,PASSWORD_DEFAULT) ." expected pass: " . $result["password"] . "</h1>";
+                echo "<div class='error'><h1>Wrong serial and password combination</h1></div>";
             }
         } else {
-            echo "<h1>Wrong serial code or password</h1>";
-            die("wrong user/pass");
+            echo "<div class='error'><h1>Wrong serial and password combination</h1></div>";
         }
-
-        /*
-        if (!$result){
-            echo "<h1>Wrong serial code or password</h1>";
-            die("wrong user/pass");
-        }
-        else {
-            echo "<h1>your username was found: " . $result["serial_code"] . "</h1>";
-
-            if (password_verify($password, $row["password"])){
-                echo "<h1>password is valid</h1>";
-            }else {
-                echo "<h1>password is invalid. you entered: ". password_hash($password,PASSWORD_DEFAULT) ." expected pass: " . $result["password"] . "</h1>";
-            }
-        }
-
-        */
-
-        /*
-        if ($row == "admin"){
-            $_SESSION["admin"] = true;
-            header('LOCATION:admin.php');
-            die();
-        }elseif ($row == "user"){
-            $_SESSION["user"] = true;
-            header('LOCATION:index.php');
-            die();
-        }else{
-            echo "404: DB ERROR";
-        }*/
     }
 
     ?>
+
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <legend>Sign in</legend>
 

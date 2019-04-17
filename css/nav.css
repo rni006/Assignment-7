@@ -15,10 +15,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-}
-
-nav{
-    z-index: 1;
+    z-index: 5;
 }
 
 nav li {
@@ -40,10 +37,10 @@ nav li a:hover {
 }
 
 #logo {
-    z-index: 5;
     position: fixed;
     left: 30px;
     top: 30px;
+    z-index: 5;
 }
 
 #small-logo{
@@ -69,6 +66,7 @@ nav form{
     position: fixed;
     right: 30px;
     top: 25px;
+    z-index: 5;
 }
 
 #hamburger, #cross{
@@ -84,6 +82,7 @@ nav form{
     height: 100px;
     background-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0, 0, 0, 0.6));
     pointer-events: none;
+    z-index: 4;
 }
 
 
@@ -98,7 +97,7 @@ nav form{
         border: solid var(--main-txt-color) 1px;
         width: 55px;
         height: 55px;
-        z-index: 5;
+
     }
     #menu:hover {
         border: solid var(--main-accent-color) 1px;

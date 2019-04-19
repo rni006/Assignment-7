@@ -45,10 +45,12 @@ if(isset($_SESSION['login'])) {
 
                 if ($row["type"] == "admin"){
                     $_SESSION['login'] = "admin";
+                    $_SESSION["serial"]= $serial;
                     header('LOCATION:admin.php');
 
                 }else{
                     $_SESSION['login'] = "user";
+                    $_SESSION["serial"]= $serial;
                     header('LOCATION:index.php');
                 }
             }else {
@@ -61,7 +63,7 @@ if(isset($_SESSION['login'])) {
 
     ?>
 
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <form class = "modularForm" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <legend>Sign in</legend>
 
         <label for="serial_code">Serial Number</label>
@@ -73,7 +75,7 @@ if(isset($_SESSION['login'])) {
         <input type="submit" id="loginbutton" value="Login" name="Login">
     </form>
 
-    <form action="register.php">
+    <form  class = "modularForm"  action="register.php">
         <legend>Sign up</legend>
         <input type="submit" id="submit" value="Register">
     </form>

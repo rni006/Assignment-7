@@ -115,6 +115,7 @@
 
                 $sql = "SELECT * FROM iter_events";
                 $result = $conn->query($sql);
+                $conn->close();
 
                 if (mysqli_num_rows($result) > 0) {
                     $events=[];
@@ -136,7 +137,7 @@
                 } else {
                     echo '<h1>Ingen arrangementer tilgjengelig</h1>';
                 }
-                $conn->close();
+
 
                 ?>
             </ul>

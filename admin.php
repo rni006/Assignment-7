@@ -1,9 +1,4 @@
-<!--
-username: admin
-password: password123
--->
 <?php
-
 session_start();
 # checks to see if the user is logged in as an admin. if not, user is sent to the login page
 if (!isset($_SESSION['login'])){
@@ -80,7 +75,7 @@ if (!isset($_SESSION['login'])){
     }
     ?>
     <h1>Add event</h1>
-    <form id="eventForm" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" enctype="multipart/form-data">
+    <form class="modularForm" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" enctype="multipart/form-data">
         <label for="title">Title</label>
         <input type="text" id="title" name="title" required>
 

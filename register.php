@@ -9,7 +9,7 @@
 <body onload="init()">
 <?php include "inc/nav.php"?>
 <section id="register">
-    <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" enctype="multipart/form-data">
+    <form class="modularForm" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" enctype="multipart/form-data">
         <legend>Register</legend>
 
         <label for="serial">Insert your serial number<span>&#8226;</span></label>
@@ -32,16 +32,6 @@
 
         <label for="password2">Repeat password <span>&#8226;</span></label>
         <input type="password" name="password2" pattern=".{6,}" title="Six or more characters" id="password2" required>
-
-        <!--
-        <label for="departurepoint">Preferred departure point <span>&#8226;</span> </label>
-        <select id="departurepoint" name="cars">
-            <option value="moscow">Russia - Moscow</option>
-            <option value="beijing">China - Beijing</option>
-            <option value="washington">USA - Washington DC</option>
-            <option value="dubai">UAE - Dubai</option>
-        </select>
-        -->
 
         <input type="submit" id="registerbutton" value="Register">
 
@@ -66,15 +56,18 @@
             $pass1 = password_hash($pass1, PASSWORD_DEFAULT);
         }
 
-        $query = "INSERT INTO iter_users 
-                  VALUES ('$serial','$pass1', NULL, NULL)";
+        $query = "INSERT INTO iter_users (serial_code, password) VALUES ('$serial', '$pass1')";
 
         $result = $conn->query($query);
+
         if ($result === TRUE) {
-            echo '<script language="javascript">';
-            echo 'alert("Registration complete.")';
-            echo '</script>';
+            echo "<script>
+            alert('Registration complete.');
+            window.location.href='login.php';
+            </script>";
+            /*
             header('LOCATION:login.php');
+            */
         } else {
             $err = $conn->error;
             echo '<script language="javascript">';

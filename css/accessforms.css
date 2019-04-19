@@ -22,14 +22,14 @@ legend{
     padding: 20px;
 }
 
-#eventForm legend,#eventForm label,#eventForm select,#eventForm option{
+.modularForm legend,.modularForm label,.modularForm select,.modularForm option{
     color: var( --main-bg-color);
 }
 
-#eventForm label {
+.modularForm label {
     width: 90%;
 }
-#eventForm {
+.modularForm {
     margin-top: 8px;
     margin-bottom: 8px;
     width: 100%;
@@ -46,7 +46,7 @@ span{
     color: red;
 }
 
-#eventForm input, #eventForm textarea {
+.modularForm input, .modularForm textarea {
     width: 90%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -56,7 +56,7 @@ span{
     color: var(--main-bg-color);
 }
 
-#eventForm textarea{
+.modularForm textarea{
     height: 106px;
 }
 

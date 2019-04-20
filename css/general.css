@@ -390,6 +390,10 @@ div{
     text-align: left;
 }
 
+.message ul {
+    margin-top: 30px;
+}
+
 
 .booking {
     grid-area: booking;
@@ -422,9 +426,11 @@ div{
 }
 
 .booking-dates, .booking-info {
-	min-height: 200px;
-	justify-content: center;
-	align-items: center;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     padding: 0 15px;
     text-align: left;
 }
@@ -437,7 +443,8 @@ div{
 }
 
 .bookyourstay-input.bookyourstay-input-select.bookyourstay-input-small {
-	margin-right: 10px;
+    max-width: 95px;
+    margin: 10px;
 }
 
 .bookyourstay-input-select {
@@ -464,6 +471,13 @@ div{
 	width: 100px;
 }
 
+.bookyourstay-input-checkbox{
+    margin: 20px;
+}
+.bookyourstay-input-checkbox span {
+    color: red;
+}
+
 
 .twocolumn {
 	display: flex;
@@ -482,12 +496,9 @@ select option{
 
 #btn{
     padding: 15px 30px 15px 30px;
-    position: relative;
-    top: -4px;
     background-color: transparent;
     border: solid var(--main-txt-color) 1px;
     font-size: 16px;
-    margin-left: 3.6em;
 }
 
 #btn:hover{
@@ -496,6 +507,40 @@ select option{
     cursor: pointer;
 }
 
+#btn-inactive {
+    text-align: center;
+    padding: 15px 30px 15px 30px;
+    position: relative;
+    top: -4px;
+    background-color: transparent;
+    border: solid #868686 1px;
+    color: #868686;
+    font-size: 16px;
+}
+
+/*error box*/
+.errorbox, .successbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 10;
+}
+.errorbox h1 {
+    color: red;
+}
+
+.successbox h1 {
+    color: lawngreen;
+}
+
+/*user page booking*/
 
 /*footer*/
 footer {

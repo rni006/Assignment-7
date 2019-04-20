@@ -1,0 +1,78 @@
+:root {
+    --main-bg-color: #232323;
+    --main-txt-color: #fdfdfd;
+    --main-accent-color: #EE750E;
+}
+
+#users_booking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+}
+#users_booking div {
+    min-width: 70%;
+    padding: 30px;
+    margin-top: 30px;
+
+}
+
+#users_booking div h1 {
+    color: var(--main-accent-color);
+}
+
+#centered-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-txt-color);
+}
+
+#centered-box p {
+    padding: 20px;
+    color: var(--main-bg-color);
+}
+
+table {
+    background-color: var(--main-txt-color);
+    border-spacing: 0;
+    width: 100%;
+    max-height: 488px;
+    overflow-y:scroll;
+
+}
+
+th{
+    background-color: var(--main-accent-color);
+    text-align: left;
+    padding: 15px 10px 15px 10px;
+    color: var(--main-txt-color);
+}
+td{
+    border-top: 1px solid #c0c0c0;
+    padding: 10px;
+    color: var(--main-bg-color);
+}
+
+.orange-button {
+    position: relative;
+    top: -4px;
+    background-color: transparent;
+    border: solid black 1px;
+    width: 90%;
+    font-size: 16px;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+.orange-button:hover {
+    background-color: var(--main-accent-color);
+    color: var(--main-txt-color);
+    border-color: var(--main-accent-color);;
+}

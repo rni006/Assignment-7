@@ -15,18 +15,6 @@
         <label for="serial">Insert your serial number<span>&#8226;</span></label>
         <input type="text" id="serial" name="serial" required>
 
-        <!-- <label for="lname">Last name <span>&#8226;</span></label>
-        <input type="text" id="lname" required>
-
-        <label for="email">Email <span>&#8226;</span></label>
-        <input type="email" id="email" required>
-
-        <label for="phone">Phone number <span>&#8226;</span></label>
-        <input type="text" id="phone" required>
-
-        <label for="username">Username <span>&#8226;</span></label>
-        <input type="text" id="username" required> -->
-
         <label for="password1">Choose a password <span>&#8226;</span></label>
         <input type="password" name="password1" pattern=".{6,}" title="Six or more characters" id="password1" required>
 
@@ -34,13 +22,10 @@
         <input type="password" name="password2" pattern=".{6,}" title="Six or more characters" id="password2" required>
 
         <input type="submit" id="registerbutton" value="Register">
-
     </form>
 
     <?php
     include "inc/connection.php";
-
-
     if ( isset($_POST["serial"]) && isset($_POST["password1"]) && isset($_POST["password2"]) ){
         $serial = check($_POST["serial"]);
         $pass1 = check($_POST["password1"]);
@@ -65,9 +50,6 @@
             alert('Registration complete.');
             window.location.href='login.php';
             </script>";
-            /*
-            header('LOCATION:login.php');
-            */
         } else {
             $err = $conn->error;
             echo '<script language="javascript">';
@@ -76,12 +58,6 @@
         }
     }
     $conn->close();
-
-
-
-
-
-
     ?>
 </section>
 <?php include "inc/footer.php"?>

@@ -115,7 +115,7 @@
 
                 $sql = "SELECT * FROM iter_events";
                 $result = $conn->query($sql);
-                $conn->close();
+                #$conn->close();
 
                 if (mysqli_num_rows($result) > 0) {
                     $events=[];
@@ -147,36 +147,60 @@
     <section id="stay">
     <div class="stay-container">
         <div class="message">
-            <h1>Best trip you will ever have</h1>
-            <p>Please look forward to it</p>
+            <h1>DISCLAIMER</h1>
+            <ul>
+                <li>All tickets are sold at a fixed prive of 5 000 000 Eto-Coins for adults and 3 000 000 Eto-Coins for children </li>
+                <li>Passengers with a criminal record are not eligible for the flight</li>
+                <li>All children under 12 must be accompanied by an adult</li>
+                <li>Duo to limitations of space travel, passengers with mental and/or physical diseases are not eligible for flight</li>
+                <li>Your trip booking is not valid until it has undergone manual inspection</li>
+                <li>Bookings must be registered at least 3 weeks prior to trip</li>
+                <li>You and your group will be contacted within 48 hours after booking for physical and mental examination</li>
+                <li>You shall only be cleared for passage after passing the space flight examinations</li>
+
+            </ul>
         </div>  
 
         <div class="booking">
             <div class="booking-container">
-                <h1>BOOK YOUR STAY HERE</h1>
+                <h1>BOOK YOUR STAY</h1>
                 <div class="bookyourstay">
-                    <form>
+                    <form action="userpage.php" method="post" enctype="multipart/form-data">
                         <div class="booking-dates">
                             <h1 class="booking-title">Journey dates</h1>
                             <div>
                                 <label class="bookyourstay-label" for="departure">Departure</label>
                                 <select class="bookyourstay-input bookyourstay-input-select" name="departure">
-                                    <option>01.03.3019</option>
-                                    <option>08.03.3019</option>
-                                    <option>15.03.3019</option>
-                                    <option>22.03.3019</option> 
-                                    <option>29.03.3019</option>
+                                    <?php
+                                    $sql = "SELECT departure_date, id  FROM iter_departures";
+                                    $result = $conn->query($sql);
+                                    #$conn->close();
+                                    if (mysqli_num_rows($result) > 0) {
+                                        while( $row = $result->fetch_assoc()) {
+                                           echo "<option value='".$row['id']."'>".$row['departure_date']."</option>";
+                                        }
+                                    }else{
+                                        echo "<option>No departures available...</option>";
+                                    }
+                                    ?>
                                 </select>      
                             </div>
 
                             <div>
                                 <label class="bookyourstay-label" for="return">Return</label>
                                 <select class="bookyourstay-input bookyourstay-input-select" name="return">
-                                <option>01.03.3019</option>
-                                <option>08.03.3019</option>
-                                <option>15.03.3019</option>
-                                <option>22.03.3019</option> 
-                                <option>29.03.3019</option>
+                                    <?php
+                                    $sql = "SELECT return_date, id  FROM iter_returns";
+                                    $result = $conn->query($sql);
+                                    #$conn->close();
+                                    if (mysqli_num_rows($result) > 0) {
+                                        while( $row = $result->fetch_assoc()) {
+                                            echo "<option value='".$row['id']."'>".$row['return_date']."</option>";
+                                        }
+                                    }else{
+                                        echo "<option>No departures available...</option>";
+                                    }
+                                    ?>
                                 </select>   
                             </div>
 
@@ -188,37 +212,50 @@
                             <div>
                                 <label class="bookyourstay-label" for="rooms">Rooms</label>
                                 <select class="bookyourstay-input bookyourstay-input-select" name="rooms">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>  
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
                                 </select>   
                             </div>
                             <div class="twocolumn">
                                 <div>
                                     <label class="bookyourstay-label" for="adults">Adults</label>
                                     <select class="bookyourstay-input bookyourstay-input-select bookyourstay-input-small" name="adults">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
                                     </select>     
                                 </div>
                                 <div>
                                 <label class="bookyourstay-label" for="kids">Children (under 12)</label>
                                     <select class="bookyourstay-input bookyourstay-input-select bookyourstay-input-small" name="kids">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                    <option value="1">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
                                     </select>    
                                 </div>
                             </div>
+                            <div class="bookyourstay-input-checkbox">
+                                <input type="checkbox" value="agreement" name="agreement" required>
+                                <label for="agreement">I have read and accept the disclaimer <span>&#8226;</span></label>
+                            </div>
+                            <?php
+                            if (isset($_SESSION['login'])){
+                                echo '<input id="btn" name="submit" type="submit" name ="book" value="book">';
+                            }else {
+                                echo '<input id="btn-inactive" value="Log in to book" disabled>';
+                            }
+                            ?>
+
                         </div>
-                        <input id="btn" type="submit" value="Submit"/>
-                    </form> 
+
+                    </form>
                 </div> 
             </div>
         </div>

@@ -9,10 +9,12 @@
 </head>
 
 <body onload="init()">
-    <?php include "inc/nav.php"?>
+    <?php
+    include "inc/nav.php";
+    include "inc/connection.php";
+    ?>
 
     <section id="intro">
-
         <img alt="logo" src="images/graphics/icon-iter.png">
         <h1>THE COSMOS AWAITS YOU</h1>
         <form action="#about">
@@ -106,44 +108,102 @@
 
 
     </section>
-    <section id="events">
-        <div id="content">
-            <h2>Events</h2>
-            <ul class="timeline-list">
-                <?php
-                include "inc/connection.php";
+    <section id="events2">
+        <h1>Events</h1>
 
-                $sql = "SELECT * FROM iter_events";
-                $result = $conn->query($sql);
-                #$conn->close();
+        <?php
+        if (isset($_POST['attend'])){
+            $eventId = check($_POST['attend']);
+            $bookingId = $_SESSION["booking"];
 
-                if (mysqli_num_rows($result) > 0) {
-                    $events=[];
-                    // output data of each row
-                    while( $row = $result->fetch_assoc()) {
-                        array_unshift($events,[$row["date"],$row["title"], $row["description"], $row["location"]]);
-                    }
-                    foreach ($events as $elem){
-                        echo'
-                        <li class="event" data-date="'. $elem[0] .'">
-                            <h3>'. $elem[1] .'</h3>
-                            <p>
-                                '. $elem[2] .'
-                            </p>
-                            <p>Location: '. $elem[3] .'</p>
-                        </li>
-                        ';
-                    }
-                } else {
-                    echo '<h1>Ingen arrangementer tilgjengelig</h1>';
+            $query = "INSERT INTO iter_attending
+              VALUES ('null','$bookingId', '$eventId')";
+
+            $results = $conn->query($query);
+
+            if ($results === True) {
+                echo '<script language="javascript">';
+                echo 'alert("Event saved in your homepage")';
+                echo '</script>';
+            } else {
+                echo "<h1>u fucked up</h1>";
+                $error = $conn->error;
+                $message = 'Error:'.$error;
+                echo '<script language="javascript">';
+                echo 'alert("'.$message.'")';
+                echo '</script>';
+            }
+        }
+        ?>
+
+        <ul id="events-list">
+            <?php
+            $sql = "SELECT * FROM iter_events";
+            $result = $conn->query($sql);
+
+            if (mysqli_num_rows($result) > 0) {
+                $events=[];
+                // output data of each row
+                while( $row = $result->fetch_assoc()) {
+                    array_unshift($events,[$row["date"],$row["title"], $row["description"], $row["location"], $row["id"]]);
                 }
+                foreach ($events as $elem){
+                    echo'
+                    
+                    <li>
+                        <div>
+                            <div class="event-dot"></div>
+                            <h1>'. $elem[0] .'</h1>
+                            <h2>'. $elem[1] .'</h2>
+                            <p>'. $elem[2] .'</p>
+                            <p id="location"><span>Location: </span>'. $elem[3] .'</p>
+                        </div>';
 
+                    #only gives the option to save an event if the user has placed a booking order
+                    if (isset($_SESSION["booking"])){
+                        $bookingId = $_SESSION["booking"];
 
-                ?>
-            </ul>
-        </div>
+                        $query = "SELECT * FROM iter_attending
+                                  WHERE booking_id = '$bookingId' AND event_id = '$elem[4]'";
+
+                        $results = $conn->query($query);
+
+                        if (mysqli_num_rows($results) > 0) {
+                            #event is already in list
+
+                            echo '                      
+                                <div>
+                                    <form>
+                                        <button name="attend" disabled class="attend-inactive"><img src="images/graphics/save.svg" alt="event already saved"></button>
+                                    </form>                        
+                                </div>';
+                        } else {
+                            echo '                      
+                                    <div>
+                                        <form name="saveEvent"  method="POST" enctype="multipart/form-data" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'">
+                                            <button name="attend" value="'.$elem[4].'"  class="attend"><img src="images/graphics/save.svg" alt="save event"></button>
+                                        </form>                        
+                                    </div>
+                                 ';
+                        }
+                        /*
+                        echo '                      
+                        <div>
+                            <form name="saveEvent"  method="POST" enctype="multipart/form-data" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'">
+                                <button name="attend" value="'.$elem[4].'"  class="attend"><img src="images/graphics/save.svg" alt="save event"></button>
+                            </form>                        
+                        </div>';
+                        */
+                    }
+                    echo '</li>';
+                }
+            } else {
+                echo '<li><h1>Ingen arrangementer tilgjengelig</h1></li>';
+            }
+            ?>
+
+        </ul>
     </section>
-
     <section id="stay">
     <div class="stay-container">
         <div class="message">
@@ -174,7 +234,6 @@
                                     <?php
                                     $sql = "SELECT departure_date, id  FROM iter_departures";
                                     $result = $conn->query($sql);
-                                    #$conn->close();
                                     if (mysqli_num_rows($result) > 0) {
                                         while( $row = $result->fetch_assoc()) {
                                            echo "<option value='".$row['id']."'>".$row['departure_date']."</option>";
@@ -192,7 +251,6 @@
                                     <?php
                                     $sql = "SELECT return_date, id  FROM iter_returns";
                                     $result = $conn->query($sql);
-                                    #$conn->close();
                                     if (mysqli_num_rows($result) > 0) {
                                         while( $row = $result->fetch_assoc()) {
                                             echo "<option value='".$row['id']."'>".$row['return_date']."</option>";
@@ -252,7 +310,6 @@
                                 echo '<input id="btn-inactive" value="Log in to book" disabled>';
                             }
                             ?>
-
                         </div>
 
                     </form>
@@ -262,8 +319,10 @@
     </div>
     </section>
 
-    <?php include "inc/footer.php"?>
+    <?php
+        $conn->close();
+        include "inc/footer.php"
+    ?>
 
 </body>
-
 </html>

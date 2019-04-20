@@ -259,92 +259,85 @@ img {vertical-align: middle;}
 }
 
 /*events*/
-/*Overskrift til seksjonen*/
-#timeline h2{
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 1.5px;
-    color: #E67E22;
-    font-weight: 100;
-    font-size: 3vh;
-    margin-top: 5%;
+#events2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/*Holderen til tidslinjen*/
-#content {
-    text-align: center;
+#events2 ul {
+    background-color: #2A2A2A;
+    min-width: 60%;
+    max-width: 90%;
+    border-left: dotted var(--main-accent-color) 2px;
+    list-style-type: none;
 }
 
-/*Listen som er tidslinjen*/
-.timeline-list {
-    border-left: 4px solid #E67E22;
-    border-bottom-right-radius: 4px;
-    border-top-right-radius: 4px;
-    background: rgba(255, 255, 255, 0.03);
-    color: rgba(255, 255, 255, 0.8);
-    font-family: 'Source Sans Pro', sans-serif;
-    margin: 50px auto;
-    letter-spacing: 0.5px;
+#events2 ul li {
     position: relative;
-    line-height: 1em;
-    padding: 50px;
-    list-style: none;
+    max-width: 90%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#events2 ul li h1 {
+    color: var(--main-accent-color);
     text-align: left;
-    font-weight: 100;
-    max-width: 40%;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 3px;
 }
 
-/*Overskrift til hver milepæle*/
-.timeline-list h3 {
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 1.5px;
-    font-weight: 100;
-    font-size: 3vh;
-    margin-bottom: 3%;
-
-}
-.timeline-list p {
-    font-size: 1.7vh;
+#events2 ul li h2 {
+    font-weight: normal;
+    padding: 10px 0;
 }
 
-.timeline-list .event {
-    border-bottom: 1px dashed rgba(230, 126, 34, 0.5);
-    padding-bottom: 25px;
-    margin-bottom: 50px;
-    position: relative;
+#events2 ul li div p {
+    padding: 5px 0;
 }
-.timeline-list .event:last-of-type {
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border: none;
+#events2 ul li div span {
+    color: var(--main-accent-color);
+
 }
-.timeline-list .event:before,
-.timeline-list .event:after {
+
+.event-dot {
+    background-color: var(--main-accent-color);
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
     position: absolute;
-    display: block;
-    top: 0;
+    left: -9px;
+    top: 24px;
 }
 
-/*Måned/år milepælen skjedde*/
-.timeline-list .event:before {
-    left: -217.5px;
-    color: rgba(255, 255, 255, 0.4);
-    content: attr(data-date);
-    text-align: right;
-    font-weight: 100;
-    font-size: 1.5vh;
-    min-width: 120px;
+.attend,.attend-inactive {
+    height: 50px;
+    width: 50px;
+    border: none;
+    border-radius: 50px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.attend-inactive {
+    background-color: #d3d3d3;
+
+}
+.attend {
+    background-color: var(--main-accent-color);
 }
 
-/*Sirklene som markerer milepælene*/
-.timeline-list .event:after {
-    box-shadow: 0 0 0 4px #E67E22;
-    left: -57.85px;
-    background: #313534;
-    border-radius: 50%;
-    height: 11px;
-    width: 11px;
-    content: "";
-    top: 5px;
+.attend:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.attend img, .attend-inactive img {
+    height: 30px;
+    padding-left: 3px;
 }
 
 /* STAY */
@@ -399,7 +392,7 @@ div{
     grid-area: booking;
 	background: 0 0;
 	min-width: 300px;
-	max-width: auto;
+	max-width: 100%;
 	padding-top: 0;
 	padding-bottom: 0;
 }
@@ -412,7 +405,6 @@ div{
     background: 0 0;
     display: flex;
     justify-content: center;
-    background: 0 0;
 	/* min-width: 659px;
 	max-width: 671px; */
 }
@@ -460,7 +452,7 @@ div{
 	box-sizing: border-box;
 	background: 0 0;
 	border-radius: 0;
-	font-family: museo-slab;
+    font-family: museo-slab, sans-serif;
 	font-weight: 300;
 	display: block;
 	margin-bottom: 23px;

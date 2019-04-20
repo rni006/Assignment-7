@@ -29,7 +29,7 @@ if (!isset($_SESSION['login'])){
 <body>
 <header>
     <nav>
-        <a id="logo" href="index.php">[Logo]</a>
+        <a id="logo" href="index.php#intro"><img id="small-logo" src="images/graphics/small-logo-alt.png"></a>
         <div id="fade"></div>
         <form id = 'loginform' action='logout.php'>
             <input type='submit' id='navloginbutton' value='Logout'/>
@@ -87,7 +87,7 @@ if (!isset($_SESSION['login'])){
         }
     }else{
         #prints booking details
-        $query = "SELECT iter_departures.departure_location, iter_departures.departure_date,
+        $query = "SELECT iter_booking.booker_id, iter_booking.rooms, iter_booking.adults, iter_booking.children, iter_departures.departure_location, iter_departures.departure_date,
                   iter_returns.return_date, iter_booking.booking_id
                   FROM iter_booking INNER JOIN iter_departures
                   ON iter_booking.departure_id = iter_departures.id
@@ -102,9 +102,23 @@ if (!isset($_SESSION['login'])){
             echo "<h1>Booked trip</h1>";
             $resultRow = mysqli_fetch_assoc($results);
             $bookId = $resultRow['booking_id'];
+            $_SESSION["booking"] = $bookId;
+
             mysqli_data_seek($results, 0);
 
             echo "<table>";
+
+            echo "<tr><td>Bookers Serial</td>";
+            echo "<td> " . $resultRow['booker_id'] . "</td></tr>";
+
+            echo "<tr><td>Adults</td>";
+            echo "<td> " . $resultRow['adults'] . "</td></tr>";
+
+            echo "<tr><td>Children</td>";
+            echo "<td> " . $resultRow['children'] . "</td></tr>";
+
+            echo "<tr><td>Rooms</td>";
+            echo "<td> " . $resultRow['rooms'] . "</td></tr>";
 
             echo "<tr><td>departure location</td>";
             echo "<td> " . $resultRow['departure_location'] . "</td></tr>";
@@ -141,15 +155,24 @@ if (!isset($_SESSION['login'])){
                 echo "</table>";
 
             }else{
+                # fix this. it should say events. move this to a place where it shows if there is no booked trip
                 echo "<div id='centered-box'>";
-                echo "<p>You have no booked trips.</p>";
+                echo "<p>You have no saved events.</p>";
                 echo "
-              <form method='get' action='index.php#stay'>
-                  <button class='orange-button' type='submit'>Book Now</button>
+              <form method='get' action='index.php#events2'>
+                  <button class='orange-button' type='submit'>Find Events</button>
               </form>";
               echo "</div>";
             }
-            echo "<div>";
+            echo "</div>";
+        }else {
+            echo "<div id='centered-box'>";
+            echo "<p>You have no booked trips.</p>";
+            echo "
+              <form method='get' action='index.php#stay'>
+                  <button class='orange-button' type='submit'>Book Now</button>
+              </form>";
+            echo "</div>";
         }
     }
 

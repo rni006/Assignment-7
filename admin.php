@@ -32,7 +32,7 @@ if (!isset($_SESSION['login'])){
 <!-- remember to change nav.php so that the login button changes to logout if a user is logged in. -->
 <header>
     <nav>
-        <a id="logo" href="index.php">[Logo]</a>
+        <a id="logo" href="index.php#intro"><img id="small-logo" src="images/graphics/small-logo-alt.png"></a>
         <div id="fade"></div>
         <ul id="menu">
             <li><a href="#event_input">New Event</a></li>

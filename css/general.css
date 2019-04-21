@@ -69,7 +69,7 @@ h1 {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: url('../images/video/mars.gif') no-repeat center center fixed; /*Background video borrowed from HASSEL's Mars Colony concept illustration @ https://www.youtube.com/watch?v=AIrH01N9AsE*/
+    background: url('../images/mars.gif') no-repeat center center fixed; /*Background video borrowed from HASSEL's Mars Colony concept illustration @ https://www.youtube.com/watch?v=AIrH01N9AsE*/
     background-size: cover;
     position: relative;
 }

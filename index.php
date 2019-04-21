@@ -301,7 +301,7 @@
                             </div>
                             <div class="bookyourstay-input-checkbox">
                                 <input type="checkbox" value="agreement" name="agreement" required>
-                                <label for="agreement">I have read and accept the disclaimer <span>&#8226;</span></label>
+                                <label for="agreement">I have read and accept the disclaimer<span>&#8226;</span></label>
                             </div>
                             <?php
                             if (isset($_SESSION['login'])){

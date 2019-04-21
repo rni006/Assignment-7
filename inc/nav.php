@@ -9,7 +9,7 @@ if (ACCESSKEY == "jf)93/KD84¤5&njd199"){
             <ul id="menu">
                 <li><a href="index.php#about">About</a></li>
                 <li><a href="index.php#experience">Experience</a></li>
-                <li><a href="index.php#events">Events</a></li>
+                <li><a href="index.php#events2">Events</a></li>
                 <li><a href="index.php#stay">Stay</a></li>
             </ul>
             ';

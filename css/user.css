@@ -14,7 +14,8 @@
 }
 #users_booking div {
     min-width: 70%;
-    padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
 }
 
@@ -27,16 +28,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--main-txt-color);
+    border: solid var(--main-txt-color) 0.5px;
+    padding: 20px;
 }
 
 #centered-box p {
     padding: 20px;
-    color: var(--main-bg-color);
+    color: var(--main-txt-color);
 }
 
 table {
-    background-color: var(--main-txt-color);
     border-spacing: 0;
     width: 100%;
     max-height: 488px;
@@ -45,25 +46,24 @@ table {
 }
 
 th{
-    background-color: var(--main-accent-color);
+    color: var(--main-accent-color);
     text-align: left;
     padding: 15px 10px 15px 10px;
-    color: var(--main-txt-color);
 }
 td{
     border-top: 1px solid #c0c0c0;
     padding: 10px;
-    color: var(--main-bg-color);
+    color: var(--main-txt-color);
 }
 
 .orange-button {
     position: relative;
     top: -4px;
     background-color: transparent;
-    border: solid black 1px;
+    border: solid var(--main-txt-color) 1px;
     width: 90%;
     font-size: 16px;
-    color: black;
+    color: var(--main-txt-color);
     padding: 14px 20px;
     margin: 8px 0;
     cursor: pointer;
@@ -71,7 +71,6 @@ td{
 }
 
 .orange-button:hover {
-    background-color: var(--main-accent-color);
-    color: var(--main-txt-color);
-    border-color: var(--main-accent-color);;
+    color: var(--main-accent-color);
+    border-color: var(--main-accent-color);
 }

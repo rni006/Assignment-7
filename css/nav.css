@@ -140,6 +140,7 @@ nav form{
         width: 58px;
         padding: 7px;
         top: auto;
+        background-color: rgba(0, 0, 0, 0.38);
     }
 
     #navloginbutton:hover{

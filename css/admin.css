@@ -18,29 +18,29 @@ section{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
 
-
+#events_table div {
+    overflow-x: auto;
 }
 
 table {
-    background-color: var(--main-txt-color);
+    color: var(--main-accent-color);
     border-spacing: 0;
     width: 100%;
     max-height: 488px;
-    overflow-y:scroll;
 
-}
 
-th{
-    background-color: var(--main-accent-color);
-    text-align: left;
-    padding: 15px 10px 15px 10px;
-    color: var(--main-txt-color);
 }
 td{
     border-top: 1px solid #c0c0c0;
     padding: 10px;
-    color: var(--main-bg-color);
+    color: var(--main-txt-color);
+}
+th{
+    text-align: left;
+    padding: 15px 10px 15px 10px;
+    color: var(--main-accent-color);
 }
 
 td form {
@@ -52,17 +52,16 @@ td form {
     position: relative;
     top: -4px;
     background-color: transparent;
-    border: solid black 1px;
+    border: solid var(--main-txt-color) 1px;
     width: 90%;
     font-size: 16px;
-    color: black;
+    color: var(--main-txt-color);
     padding: 14px 30px 14px 20px;
     margin: 8px 0;
     cursor: pointer;
 }
 
 #delete:hover {
-    background-color: #db5751;
-    color: var(--main-txt-color);
-    border-color: var(--main-accent-color);;
+    color: #e54c3f;
+    border-color: #e54c3f;
 }

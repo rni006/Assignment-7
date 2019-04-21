@@ -59,6 +59,7 @@ h1 {
     font-size: 30px;
     letter-spacing: 2px;
     text-align: center;
+    margin: 20px;
 }
 
 /*intro section*/
@@ -150,9 +151,6 @@ h1 {
     align-items: center;
     justify-content: center;
 
-}
-#experience-title{
-    margin-bottom: 2em;
 }
 
 .mySlides {display: none}
@@ -264,14 +262,16 @@ img {vertical-align: middle;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 #events2 ul {
     background-color: #2A2A2A;
-    min-width: 60%;
-    max-width: 90%;
+    max-width: 600px;
+    width: calc(100% - 19px);
     border-left: dotted var(--main-accent-color) 2px;
     list-style-type: none;
+    margin-left: 18px;
 }
 
 #events2 ul li {
@@ -379,12 +379,16 @@ div{
 	line-height: 1.8;
 }
 
-.message h1{
-    text-align: left;
-}
+
 
 .message ul {
     margin-top: 30px;
+    border: solid #e54c3f 0.5px;
+    padding: 10px;
+}
+.message ul li {
+    padding: 5px;
+    margin-left: 25px;
 }
 
 
@@ -465,6 +469,7 @@ div{
 
 .bookyourstay-input-checkbox{
     margin: 20px;
+    text-align: center;
 }
 .bookyourstay-input-checkbox span {
     color: red;
@@ -523,14 +528,21 @@ select option{
     justify-content: center;
     flex-direction: column;
     z-index: 10;
+    padding: 0;
+    margin: 0;
 }
 .errorbox h1 {
-    color: red;
+    color: red!important;
 }
 
 .successbox h1 {
-    color: lawngreen;
+    color: lawngreen!important;
 }
+
+.errorbox p, .successbox p {
+}
+
+
 
 /*user page booking*/
 
@@ -554,7 +566,10 @@ footer {
 }
 }
 
-@media only screen and (max-width: 684px){
+@media only screen and (max-width: 700px){
+    #about div {
+        padding: 10px;
+    }
     
 }
 

@@ -94,42 +94,43 @@ if (!isset($_SESSION['login'])){
 </section>
 <section id="events_table">
     <h1>Events</h1>
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Date</th>
-            <th>Location</th>
-            <th>Description</th>
-            <th></th>
-        </tr>
-        <?php
-        # deletes a selected item from the database
-        if (isset($_POST['submit']) && $_POST['submit'] == "delete"){
-            $deleteid = $_POST['msgid'];
-            $deletequery = "DELETE FROM iter_events WHERE id = $deleteid";
-            $result = $conn->query($deletequery);
-            if ($result === TRUE) {
-                echo '<script language="javascript">';
-                echo 'alert("Row successfully deleted")';
-                echo '</script>';
-            } else {
-                $err = $conn->error;
-                echo "Sorry: $err";
-                echo '<script language="javascript">';
-                echo 'alert("Sorry:'.$err.'")';
-                echo '</script>';
+    <div>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Description</th>
+                <th></th>
+            </tr>
+            <?php
+            # deletes a selected item from the database
+            if (isset($_POST['submit']) && $_POST['submit'] == "delete"){
+                $deleteid = $_POST['msgid'];
+                $deletequery = "DELETE FROM iter_events WHERE id = $deleteid";
+                $result = $conn->query($deletequery);
+                if ($result === TRUE) {
+                    echo '<script language="javascript">';
+                    echo 'alert("Row successfully deleted")';
+                    echo '</script>';
+                } else {
+                    $err = $conn->error;
+                    echo "Sorry: $err";
+                    echo '<script language="javascript">';
+                    echo 'alert("Sorry:'.$err.'")';
+                    echo '</script>';
+                }
             }
-        }
 
-        # iterates through all entries in events and posts them in a table
-        $query = "SELECT * FROM iter_events";
-        $results = $conn->query($query);
+            # iterates through all entries in events and posts them in a table
+            $query = "SELECT * FROM iter_events";
+            $results = $conn->query($query);
 
-        if (mysqli_num_rows($results) > 0) {
-            ChromePhp::log('getting items: success');
+            if (mysqli_num_rows($results) > 0) {
+                ChromePhp::log('getting items: success');
 
-            while($row = $results->fetch_assoc()) {
-                echo '
+                while($row = $results->fetch_assoc()) {
+                    echo '
                         <tr>
                             <td>' . $row["title"] . '</td>
                             <td>' . substr($row["description"], 0, 50) . '(...)</td>
@@ -143,14 +144,16 @@ if (!isset($_SESSION['login'])){
                             </td>                 
                         </tr>
                 ';
+                }
+            } else {
+                $error = $conn->error;
+                ChromePhp::log("Error description: " . mysqli_error($conn));
             }
-        } else {
-            $error = $conn->error;
-            ChromePhp::log("Error description: " . mysqli_error($conn));
-        }
-        $conn->close();
-        ?>
-    </table>
+            $conn->close();
+            ?>
+        </table>
+    </div>
+
 </section>
 <section id="booked_trips">
 

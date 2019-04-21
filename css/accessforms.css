@@ -23,27 +23,28 @@ legend{
 }
 
 .modularForm legend,.modularForm label,.modularForm select,.modularForm option{
-    color: var( --main-bg-color);
+    color: var( --main-txt-color);
 }
 
 .modularForm label {
+    font-size: 12px;
     width: 90%;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 .modularForm {
     margin-top: 8px;
     margin-bottom: 8px;
     width: 100%;
     max-width: 600px;
-    background-color: var(--main-txt-color);
     padding: 25px 0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 span{
-    color: red;
+    color: #e54c3f;
 }
 
 .modularForm input, .modularForm textarea {
@@ -53,7 +54,7 @@ span{
     display: inline-block;
     border: 1px solid #afafaf;
     box-sizing: border-box;
-    color: var(--main-bg-color);
+    background-color: transparent;
 }
 
 .modularForm textarea{
@@ -64,19 +65,18 @@ span{
     position: relative;
     top: -4px;
     background-color: transparent;
-    border: solid black 1px;
+    border: solid var(--main-txt-color) 1px;
     width: 90%;
     font-size: 16px;
-    color: black;
+    color: var(--main-txt-color);
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 30px 0;
     cursor: pointer;
 }
 
 #submit:hover, #registerbutton:hover, #loginbutton:hover {
-    background-color: var(--main-accent-color);
-    color: var(--main-txt-color);
-    border-color: var(--main-accent-color);;
+    color: var(--main-accent-color);
+    border-color: var(--main-accent-color);
 }
 
 .error {

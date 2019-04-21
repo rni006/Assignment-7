@@ -69,7 +69,23 @@ h1 {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background: url('../images/video/mars.gif') no-repeat center center fixed; /*Background video borrowed from HASSEL's Mars Colony concept illustration @ https://www.youtube.com/watch?v=AIrH01N9AsE*/
+    background-size: cover;
+    position: relative;
+}
 
+#bottom-fade{
+    position:absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 1px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), var(--main-bg-color));
+    pointer-events: none;
+    z-index: 1;
+}
+
+#intro img, #intro h1 {
+    z-index: 2;
 }
 
 #intro form input {
@@ -80,6 +96,7 @@ h1 {
     border: solid var(--main-txt-color) 1px;
     font-size: 16px;
     margin: 40px;
+    z-index: 2;
 }
 #intro form input:hover{
     color: var(--main-accent-color);
@@ -97,6 +114,7 @@ h1 {
     margin-top: -30px;
     height: 100%;
     justify-content: center;
+    z-index: 1;
 }
 
 #intro hr {
@@ -538,10 +556,6 @@ select option{
 .successbox h1 {
     color: lawngreen!important;
 }
-
-.errorbox p, .successbox p {
-}
-
 
 
 /*user page booking*/

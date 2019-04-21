@@ -25,7 +25,7 @@ if(isset($_SESSION['login'])) {
     </style>
     <title>Итер - Login</title>
 </head>
-<body onload="init()">
+<body">
 <?php include "inc/nav.php"?>
 <section id="login">
     <?php

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/accessforms.css">
     <title>Итер - Register</title>
 </head>
-<body onload="init()">
+<body)">
 <?php include "inc/nav.php"?>
 <section id="register">
     <form class="modularForm" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" enctype="multipart/form-data">

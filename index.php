@@ -8,7 +8,7 @@
     <title>Итер</title>
 </head>
 
-<body onload="init()">
+<body">
     <?php
     include "inc/nav.php";
     include "inc/connection.php";
@@ -20,6 +20,7 @@
         <form action="#about">
             <input type="submit" value="Start your journey" />
         </form>
+        <div id="bottom-fade"></div>
         <div id="line">
             <hr>
         </div>

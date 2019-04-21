@@ -34,17 +34,9 @@ if (!isset($_SESSION['login'])){
     <nav>
         <a id="logo" href="index.php#intro"><img id="small-logo" src="images/graphics/small-logo-alt.png"></a>
         <div id="fade"></div>
-        <ul id="menu">
-            <li><a href="#event_input">New Event</a></li>
-            <li><a href="#events_table">Published Events</a></li>
-            <li><a href="#booked_trips">Booked Trips</a></li>
-            <li style="display: none"><a href="#"></a></li>
-        </ul>
         <form id = 'loginform' action='logout.php'>
             <input type='submit' id='navloginbutton' value='Logout'/>
         </form>
-        <img src="images/graphics/burgerbutton.svg" id="hamburger" alt="menu">
-        <img src="images/graphics/crossbutton.svg" id="cross" alt="exit">
     </nav>
 </header>
 <section id="event_input">
@@ -98,9 +90,9 @@ if (!isset($_SESSION['login'])){
         <table>
             <tr>
                 <th>Title</th>
-                <th>Date</th>
-                <th>Location</th>
                 <th>Description</th>
+                <th>Location</th>
+                <th>Date</th>
                 <th></th>
             </tr>
             <?php
@@ -153,9 +145,6 @@ if (!isset($_SESSION['login'])){
             ?>
         </table>
     </div>
-
-</section>
-<section id="booked_trips">
 
 </section>
 <?php include "inc/footer.php"?>

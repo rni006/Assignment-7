@@ -1,3 +1,4 @@
+# logout management written by candidate 110.
 <?php
 # destroys session and redirects user to the index page
 session_start();

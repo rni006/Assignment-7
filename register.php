@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <?php
     define("ACCESSKEY", "jf)93/KD84¤5&njd199");
@@ -8,6 +9,7 @@
 </head>
 <body)">
 <?php include "inc/nav.php"?>
+<!--register form written by candidate 110-->
 <section id="register">
     <form class="modularForm" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" enctype="multipart/form-data">
         <legend>Register</legend>
@@ -25,6 +27,7 @@
     </form>
 
     <?php
+    # registration db connection written by candidate 110
     include "inc/connection.php";
     if ( isset($_POST["serial"]) && isset($_POST["password1"]) && isset($_POST["password2"]) ){
         $serial = check($_POST["serial"]);

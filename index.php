@@ -1,3 +1,4 @@
+# all design choices and content management are agreed upon and cooperated by candidate 110 and candidate XXX
 <?php session_start() ?>
 <html lang="en">
 
@@ -14,6 +15,7 @@
     include "inc/connection.php";
     ?>
 
+    <!--intro section written by candidate 110 and candidate XXX-->
     <section id="intro">
         <img alt="logo" src="images/graphics/icon-iter.png">
         <h1>THE COSMOS AWAITS YOU</h1>
@@ -27,6 +29,7 @@
 
     </section>
 
+    <!--about section written by candidate 110 and candidate XXX-->
     <section id="about">
         <div>
             <h2>Venture beyond your reality</h2>
@@ -39,8 +42,7 @@
         </div>
     </section>
 
-
-
+<!--experience section written by candidate XXX-->
     <section id="experience">
         <div>
             <h1 id="experience-title">Experience the world beyond</h1>
@@ -75,7 +77,7 @@
             </div>
 
             <!-- SCRIPT -->
-
+            <!--script written by candidate candidate XXX-->
             <script>
                 var slideIndex = 1;
                 showSlides(slideIndex);
@@ -106,9 +108,9 @@
                 }
             </script>
         </div>
-
-
     </section>
+
+    <!--events section written by candidate 110-->
     <section id="events2">
         <h1>Events</h1>
 
@@ -187,14 +189,6 @@
                                     </div>
                                  ';
                         }
-                        /*
-                        echo '                      
-                        <div>
-                            <form name="saveEvent"  method="POST" enctype="multipart/form-data" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'">
-                                <button name="attend" value="'.$elem[4].'"  class="attend"><img src="images/graphics/save.svg" alt="save event"></button>
-                            </form>                        
-                        </div>';
-                        */
                     }
                     echo '</li>';
                 }
@@ -205,6 +199,8 @@
 
         </ul>
     </section>
+
+    <!--stay section written by candidate XXX-->
     <section id="stay">
     <div class="stay-container">
         <div class="message">
@@ -265,7 +261,6 @@
 
                         </div>
                         <!-- Second box -->
-
                         <div class="booking-info">
                             <h1 class="booking-title">Guests and rooms</h1>
                             <div>

@@ -1,4 +1,5 @@
 <?php
+# connection management written by candidate 110.
 if (ACCESSKEY == "jf)93/KD84¤5&njd199"){
 
     $host = "localhost";

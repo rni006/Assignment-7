@@ -1,4 +1,5 @@
 <?php
+# session handling written by candidate 110
 session_start();
 # checks to see if the user is logged in as a user. if not, user is sent to the login page
 if (!isset($_SESSION['login'])){
@@ -39,6 +40,7 @@ if (!isset($_SESSION['login'])){
 <section id="users_booking">
 
     <?php
+    # user page content written by candidate 110
     $serial = $_SESSION["serial"];
     $bookId = null;
     # handles booking form data
@@ -155,7 +157,6 @@ if (!isset($_SESSION['login'])){
                 echo "</table>";
 
             }else{
-                # fix this. it should say events. move this to a place where it shows if there is no booked trip
                 echo "<div id='centered-box'>";
                 echo "<p>You have no saved events.</p>";
                 echo "

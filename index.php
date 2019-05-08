@@ -1,4 +1,4 @@
-# all design choices and content management are agreed upon and cooperated by candidate 110 and candidate XXX
+# all design choices and content management are agreed upon and cooperated by candidate 110 and candidate 118
 <?php session_start() ?>
 <html lang="en">
 
@@ -15,9 +15,9 @@
     include "inc/connection.php";
     ?>
 
-    <!--intro section written by candidate 110 and candidate XXX-->
+    <!--intro section written by candidate 110 and candidate 118-->
     <section id="intro">
-        <img alt="logo" src="images/graphics/icon-iter.png">
+        <img alt="logo" src="images/graphics/icon-iter.png"> <!-- icon created by candidate 118 -->
         <h1>THE COSMOS AWAITS YOU</h1>
         <form action="#about">
             <input type="submit" value="Start your journey" />
@@ -29,7 +29,7 @@
 
     </section>
 
-    <!--about section written by candidate 110 and candidate XXX-->
+    <!--about section written by candidate 110 and candidate 118-->
     <section id="about">
         <div>
             <h2>Venture beyond your reality</h2>
@@ -42,7 +42,7 @@
         </div>
     </section>
 
-<!--experience section written by candidate XXX-->
+<!--experience section written by candidate 118-->
     <section id="experience">
         <div>
             <h1 id="experience-title">Experience the world beyond</h1>
@@ -77,7 +77,7 @@
             </div>
 
             <!-- SCRIPT -->
-            <!--script written by candidate candidate XXX-->
+            <!--script written by candidate candidate 118-->
             <script>
                 var slideIndex = 1;
                 showSlides(slideIndex);
@@ -200,7 +200,7 @@
         </ul>
     </section>
 
-    <!--stay section written by candidate XXX-->
+    <!--stay section written by candidate 118-->
     <section id="stay">
     <div class="stay-container">
         <div class="message">

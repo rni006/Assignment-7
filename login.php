@@ -1,6 +1,6 @@
 
 <?php
-# <!--login system written by candidate 110 and candidate XXX-->
+# <!--login system written by candidate 110 and candidate 118-->
 session_start();
 
 if(isset($_SESSION['login'])) {
